@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, RefreshCw, CheckCircle2, XCircle, Clock, Send, Zap } from "lucide-react";
+import compassLogo from "../../imports/logo-2.png";
 
 type TabId = string;
 interface Props { navigateTo: (tab: TabId) => void; }
@@ -140,12 +141,9 @@ export function CompassView({ navigateTo }: Props) {
       {/* Compass header */}
       <div className="px-8 py-6 border-b" style={{ borderColor:"var(--border)" }}>
         <div className="flex items-start gap-5">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
             style={{ background:"var(--card)", border:"1px solid var(--border)" }}>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <circle cx="13" cy="13" r="11" stroke="var(--primary)" strokeWidth="1.5" />
-              <path d="M13 4L15.5 10.5H22L16.5 14.5L18.5 21L13 17L7.5 21L9.5 14.5L4 10.5H10.5L13 4Z" fill="var(--primary)" fillOpacity="0.7" />
-            </svg>
+            <img src={compassLogo} alt="Compass" className="w-11 h-11 object-contain" draggable={false} />
           </div>
           <div className="flex-1">
             <div className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color:"var(--muted-foreground)" }}>Reward Design &amp; Alignment</div>

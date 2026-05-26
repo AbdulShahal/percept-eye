@@ -1,5 +1,5 @@
-import { OrchestrationViz } from "./OrchestrationViz";
 import { CheckCircle, ExternalLink, Plus } from "lucide-react";
+import { Diagram } from "./Diagram";
 
 interface PremiumDashboardProps {
   onNewMission: () => void;
@@ -232,7 +232,9 @@ export function PremiumDashboard({ onNewMission, navigateTo }: PremiumDashboardP
             </div>
           </div>
           <div className="flex-1 min-h-0">
-            <OrchestrationViz />
+            <div className="w-full h-full">
+              <Diagram />
+            </div>
           </div>
         </div>
       </div>

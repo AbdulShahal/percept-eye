@@ -4,6 +4,7 @@ import {
   ChevronDown, Layers, Zap, Shield, AlertCircle, CheckCircle2,
   Network, Route, Database, Tag, ExternalLink, Copy,
 } from "lucide-react";
+import scoutLogo from "../../imports/logo-1.png";
 
 // ── shared data ─────────────────────────────────────────────────────────────
 
@@ -693,13 +694,9 @@ export function PremiumAnalytics() {
       {/* Scout header */}
       <div className="px-8 py-6 border-b" style={{ borderColor: "var(--border)" }}>
         <div className="flex items-start gap-6">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
             style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M4 14C4 14 8 6 14 6C20 6 24 14 24 14C24 14 20 22 14 22C8 22 4 14 4 14Z"
-                stroke="var(--primary)" strokeWidth="1.5" strokeLinejoin="round" />
-              <circle cx="14" cy="14" r="3" fill="var(--primary)" />
-            </svg>
+            <img src={scoutLogo} alt="Scout" className="w-11 h-11 object-contain" draggable={false} />
           </div>
           <div className="flex-1">
             <div className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color: "var(--muted-foreground)" }}>
