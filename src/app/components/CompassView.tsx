@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, RefreshCw, CheckCircle2, XCircle, Clock, Send, Zap } from "lucide-react";
-import compassLogo from "../../imports/logo-2.png";
+import compassLogoDark from "../../imports/logo-2.png";
+import compassLogoLight from "../../imports/logo-2-light.png";
+import { useTheme } from "./ThemeProvider";
 
 type TabId = string;
 interface Props { navigateTo: (tab: TabId) => void; }
@@ -99,6 +101,8 @@ export function CompassView({ navigateTo }: Props) {
   const [activeTab, setActiveTab] = useState("Rubric");
   const [activeRule, setActiveRule] = useState(1);
   const [redesignState, setRedesignState] = useState<"idle"|"sending"|"sent">("idle");
+  const { theme } = useTheme();
+  const compassLogo = theme === "light" ? compassLogoLight : compassLogoDark;
 
   useEffect(() => {
     const id = setInterval(()=>setElapsed(e=>e+1), 1000);
@@ -143,7 +147,7 @@ export function CompassView({ navigateTo }: Props) {
         <div className="flex items-start gap-5">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
             style={{ background:"var(--card)", border:"1px solid var(--border)" }}>
-            <img src={compassLogo} alt="Compass" className="w-11 h-11 object-contain" draggable={false} />
+            <img src={compassLogo} alt="Compass" className="w-11 h-11 object-contain" draggable={false} key={compassLogo} />
           </div>
           <div className="flex-1">
             <div className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color:"var(--muted-foreground)" }}>Reward Design &amp; Alignment</div>

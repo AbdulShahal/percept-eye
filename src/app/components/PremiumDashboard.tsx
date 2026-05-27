@@ -217,12 +217,12 @@ export function PremiumDashboard({ onNewMission, navigateTo }: PremiumDashboardP
           className="w-80 flex-shrink-0 border-l flex flex-col overflow-hidden"
           style={{ borderColor: "var(--border)" }}
         >
-          <div className="px-5 py-4 border-b flex items-center justify-between" style={{ borderColor: "var(--border)", background: "#070e0a" }}>
+          <div className="px-5 py-4 border-b flex items-center justify-between" style={{ borderColor: "var(--border)", background: "var(--card)" }}>
             <div>
               <div className="text-[10px] uppercase tracking-widest font-medium mb-0.5" style={{ color: "rgba(60,130,98,0.7)" }}>
                 Mission Control
               </div>
-              <div className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.9)" }}>
+              <div className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
                 Live Orchestration
               </div>
             </div>

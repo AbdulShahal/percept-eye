@@ -4,7 +4,9 @@ import {
   ChevronDown, Layers, Zap, Shield, AlertCircle, CheckCircle2,
   Network, Route, Database, Tag, ExternalLink, Copy,
 } from "lucide-react";
-import scoutLogo from "../../imports/logo-1.png";
+import scoutLogoDark from "../../imports/logo-1.png";
+import scoutLogoLight from "../../imports/logo-1-light.png";
+import { useTheme } from "./ThemeProvider";
 
 // ── shared data ─────────────────────────────────────────────────────────────
 
@@ -675,6 +677,8 @@ function DiscoveriesTab() {
 export function PremiumAnalytics() {
   const [activeTab, setActiveTab] = useState("Overview");
   const tabs = ["Overview", "Spec", "Discoveries", "History", "Future"];
+  const { theme } = useTheme();
+  const scoutLogo = theme === "light" ? scoutLogoLight : scoutLogoDark;
 
   return (
     <div className="flex-1 overflow-y-auto flex flex-col">
@@ -696,7 +700,7 @@ export function PremiumAnalytics() {
         <div className="flex items-start gap-6">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
             style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
-            <img src={scoutLogo} alt="Scout" className="w-11 h-11 object-contain" draggable={false} />
+            <img src={scoutLogo} alt="Scout" className="w-11 h-11 object-contain" draggable={false} key={scoutLogo} />
           </div>
           <div className="flex-1">
             <div className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color: "var(--muted-foreground)" }}>
